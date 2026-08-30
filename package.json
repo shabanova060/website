@@ -3,24 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
+    "dev": "bun --bun next dev",
+    "build": "bun --bun next build",
+    "start": "bun --bun next start",
+    "lint": "bun --bun biome check",
+    "format": "bun --bun biome format --write",
+    "generate:importmap": "bun run scripts/gen-map.ts",
+    "generate:types": "bun run scripts/gen-types.ts"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^4.0.0-internal.fa345ef",
+    "@payloadcms/next": "^4.0.0-internal.fa345ef",
+    "@payloadcms/plugin-seo": "^4.0.0-internal.fa345ef",
+    "@payloadcms/richtext-lexical": "^4.0.0-internal.fa345ef",
     "next": "16.3.3",
+    "payload": "^4.0.0-internal.fa345ef",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.2",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@biomejs/biome": "2.5.11",
+    "@types/bun": "^1.4.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
     "babel-plugin-react-compiler": "1.0.0",
-    "typescript": "^5"
+    "typescript": "^7.0.2"
   },
   "packageManager": "bun@1.4.0",
   "ignoreScripts": [
